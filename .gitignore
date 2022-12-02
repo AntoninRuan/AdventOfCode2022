@@ -1,1 +1,6 @@
+# Ignoring file without extenstion
+*
+!*.*
+!*/
+
 *.txt
