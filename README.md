@@ -5,5 +5,5 @@ Mes solutions pour Advent Of Code 2022
 ## Progression
 
 ![days](https://img.shields.io/badge/day%20📅-7-blue)
-![stars](https://img.shields.io/badge/stars%20⭐-12-yellow)
-![days_completed](https://img.shields.io/badge/days%20completed-6-red)
+![stars](https://img.shields.io/badge/stars%20⭐-14-yellow)
+![days_completed](https://img.shields.io/badge/days%20completed-7-red)
