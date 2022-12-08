@@ -46,6 +46,14 @@ STDOUT equ 1
     int 0x80
 %endmacro
 
+%macro print_int 1
+    PUSHA
+    MOV eax, %1
+    MOV ebx, 10
+    CALL print
+    POPA
+%endmacro
+
 %macro valid 4
     MOV [%2], byte 1
 
@@ -83,6 +91,13 @@ STDOUT equ 1
     end_loop:
 %endmacro
 
+%macro add_imm 2
+    PUSHA
+    MOV eax, [%1]
+    ADD eax, %2
+    MOV [%1], eax 
+    POPA
+%endmacro
 
 section	.text
    global _start   
@@ -108,18 +123,15 @@ _start:
         
     result:
     close_file fd
-    
-    MOV eax, [count]
-    ADD eax, 14
-    MOV ebx, 10
-    CALL print
+
+    add_imm count, 14
+    print_int [count]
     
 
 end:	
-    mov	eax,1   ; System calls sys_exit
-    mov ebx,0   ; sys_exit error code
-    int	0x80
-
+    MOV	eax,1   ; System calls sys_exit
+    MOV ebx,0   ; sys_exit error code
+    INT	0x80
 
 print:
 mov ecx, esp

@@ -11,7 +11,7 @@ public class day4 {
 
     public static void main(String... args) {
 
-        File file = new File("day4/input.txt");
+        File file = new File("day04/input.txt");
         
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)))) {
             
